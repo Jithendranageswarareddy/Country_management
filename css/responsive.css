@@ -32,9 +32,14 @@
     grid-template-columns: 1fr;
   }
 
+  .login-shell {
+    gap: 16px;
+  }
+
   .login-panel,
   .login-form-card {
-    padding: 24px;
+    padding: 20px;
+    border-radius: 24px;
   }
 
   .country-form {
@@ -144,13 +149,17 @@
 
 @media (max-width: 540px) {
   .login-page {
-    padding: 12px;
+    padding: 16px;
   }
 
   .login-panel,
   .login-form-card {
-    padding: 20px;
-    border-radius: 24px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .login-copy h1 {
+    font-size: 1.3rem;
   }
 
   .topbar-chip {

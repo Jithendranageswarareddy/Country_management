@@ -10,15 +10,8 @@
   <main class="login-shell">
     <section class="login-panel">
       <div class="login-copy">
-        <p class="login-kicker">Country Management</p>
-        <h1>Sign in to Country Hub</h1>
-        <p>Access the dashboard, manage countries, and review analytics from one polished admin workspace.</p>
-      </div>
-
-      <div class="credential-card" aria-label="Demo credentials">
-        <strong>Demo access</strong>
-        <p>admin / admin123</p>
-        <p>user / user123</p>
+        <h1>Welcome to Country Hub</h1>
+        <p>Sign in to your account</p>
       </div>
     </section>
 
@@ -26,26 +19,25 @@
       <form id="loginForm" class="login-form">
         <label class="field">
           <span>Username</span>
-          <input id="username" type="text" autocomplete="username" required />
+          <input id="username" type="text" autocomplete="username" placeholder="admin or user" required />
         </label>
         <label class="field">
           <span>Password</span>
-          <div class="password-row">
+          <div class="password-field">
             <input id="password" type="password" autocomplete="current-password" required />
-            <button id="togglePass" class="toggle-password" type="button">Show</button>
+            <button id="togglePass" class="password-toggle" type="button" aria-label="Toggle password visibility">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
           </div>
-        </label>
-        <label class="field">
-          <span>Role</span>
-          <select id="role">
-            <option>Admin</option>
-            <option>User</option>
-          </select>
         </label>
         <p id="loginError" class="form-error" aria-live="polite"></p>
         <div class="form-actions login-actions">
           <button class="primary-button" type="submit">Sign in</button>
         </div>
+        <p class="login-helper-text">Demo: admin / admin123 or user / user123</p>
       </form>
     </section>
   </main>
