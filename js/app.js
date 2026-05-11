@@ -260,8 +260,8 @@
   function calculateStats() {
     if (state.countries.length === 0) {
       return {
-        largest: { name: "—", population: 0 },
-        smallest: { name: "—", population: 0 },
+        largest: { countryName: "—", population: 0 },
+        smallest: { countryName: "—", population: 0 },
         continentMost: "—",
         avgPopulation: 0
       };
@@ -293,12 +293,12 @@
   function updateEnhancedStats() {
     const stats = calculateStats();
     if (els.largestPopCountry) {
-      els.largestPopCountry.textContent = stats.largest.name;
-      els.largestPopCountry.title = stats.largest.name !== "—" ? `${stats.largest.name}: ${CountryUI.formatPopulation(stats.largest.population)}` : "";
+      els.largestPopCountry.textContent = stats.largest.countryName;
+      els.largestPopCountry.title = stats.largest.countryName !== "—" ? `${stats.largest.countryName}: ${CountryUI.formatPopulation(stats.largest.population)}` : "";
     }
     if (els.smallestPopCountry) {
-      els.smallestPopCountry.textContent = stats.smallest.name;
-      els.smallestPopCountry.title = stats.smallest.name !== "—" ? `${stats.smallest.name}: ${CountryUI.formatPopulation(stats.smallest.population)}` : "";
+      els.smallestPopCountry.textContent = stats.smallest.countryName;
+      els.smallestPopCountry.title = stats.smallest.countryName !== "—" ? `${stats.smallest.countryName}: ${CountryUI.formatPopulation(stats.smallest.population)}` : "";
     }
     if (els.continentMost) {
       els.continentMost.textContent = stats.continentMost;
