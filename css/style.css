@@ -78,26 +78,26 @@ img {
 
 .app-shell {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px;
   min-height: 100vh;
 }
 
 .sidebar {
-  padding: 20px 16px;
+  padding: 16px 14px;
   background: linear-gradient(180deg, #07101f 0%, #102240 100%);
   color: #eaf1ff;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   position: sticky;
-  top: 20px;
+  top: 16px;
   align-self: start;
   height: fit-content;
-  max-height: calc(100vh - 40px);
+  max-height: calc(100vh - 32px);
   overflow: auto;
-  border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(7, 16, 31, 0.22);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(7, 16, 31, 0.18);
 }
 
 .brand {
@@ -131,12 +131,12 @@ img {
 
 .nav-item {
   text-decoration: none;
-  color: rgba(234, 241, 255, 0.82);
-  padding: 11px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  font-size: 0.95rem;
-  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  color: rgba(234, 241, 255, 0.78);
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.93rem;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-item:hover,
@@ -148,23 +148,25 @@ img {
 }
 
 .main-panel {
-  padding: 20px 20px 20px 0;
+  padding: 16px 16px 16px 0;
   min-width: 0;
+  max-width: 1560px;
+  margin: 0 auto;
 }
 
 .topbar {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: var(--shadow-soft);
-  border-radius: 24px;
-  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 11px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 18px;
-  animation: fadeUp 0.45s ease both;
+  gap: 12px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.4s ease both;
   transition: var(--transition);
 }
 
@@ -195,29 +197,30 @@ img {
 .danger-button,
 .toast-close,
 .sort-button {
-  border-radius: 14px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, opacity 0.22s ease, color 0.22s ease;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+  font-weight: 600;
 }
 
 .primary-button,
 .secondary-button,
 .danger-button {
-  padding: 10px 14px;
+  padding: 9px 13px;
   font-weight: 700;
-  border-radius: 12px;
-  font-size: 0.95rem;
+  border-radius: 11px;
+  font-size: 0.93rem;
 }
 
 .primary-button {
   background: linear-gradient(135deg, var(--primary), #3b82f6);
   color: white;
-  box-shadow: 0 14px 28px rgba(15, 98, 254, 0.28);
+  box-shadow: 0 12px 24px rgba(15, 98, 254, 0.2);
 }
 
 .primary-button:hover {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
   transform: translateY(-2px);
-  box-shadow: 0 18px 34px rgba(15, 98, 254, 0.34);
+  box-shadow: 0 16px 32px rgba(15, 98, 254, 0.28);
 }
 
 .secondary-button {
@@ -241,14 +244,16 @@ img {
 
 .menu-toggle,
 .icon-button {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
   background: #eaf1ff;
   color: #0b4fd6;
   transition: var(--transition);
-  border-radius: 12px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
 }
 
 :root[data-theme="dark"] .menu-toggle,
@@ -263,7 +268,7 @@ img {
 
 .dashboard {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .stats-grid {
@@ -273,14 +278,14 @@ img {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: var(--radius-lg);
-  padding: 18px 18px 17px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-  animation: fadeUp 0.5s ease both;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  padding: 15px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  animation: fadeUp 0.45s ease both;
 }
 
 :root[data-theme="dark"] .stat-card {
@@ -299,9 +304,9 @@ img {
 
 .stat-card strong {
   display: block;
-  margin: 8px 0 4px;
-  font-size: 1.7rem;
-  line-height: 1;
+  margin: 6px 0 2px;
+  font-size: 1.6rem;
+  line-height: 1.1;
 }
 
 .stat-card small,
@@ -346,8 +351,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 14px;
+  gap: 14px;
+  margin-bottom: 12px;
 }
 
 .toolbar {
@@ -369,7 +374,7 @@ img {
 .analytics-grid,
 .card-grid {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .dashboard #dashboard-widgets,
@@ -386,21 +391,36 @@ img {
   min-height: 100%;
 }
 
-.dashboard #topPopList,
-.dashboard #recentSearches {
+.dashboard #topPopList {
   display: grid;
-  gap: 10px;
-  margin: 14px 0 0;
+  gap: 8px;
+  margin: 10px 0 0;
   padding-left: 18px;
 }
 
 .dashboard #recentSearches {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
   list-style: none;
   padding-left: 0;
 }
 
 .dashboard #recentSearches li {
   margin: 0;
+}
+
+.dashboard #recentSearches.empty {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard #recentSearches.empty::after {
+  content: "No recent searches";
+  font-size: 0.87rem;
+  color: var(--muted);
 }
 
 .dashboard #recentSearches .secondary-button {
@@ -426,9 +446,10 @@ img {
   border: 1px solid var(--border);
   background: #fff;
   color: var(--text);
-  border-radius: 12px;
-  padding: 11px 13px;
+  border-radius: 11px;
+  padding: 10px 12px;
   outline: none;
+  font-size: 0.93rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
@@ -706,11 +727,11 @@ img {
 }
 
 .login-shell {
-  width: min(100%, 1080px);
+  width: min(100%, 960px);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 460px);
-  gap: 22px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+  gap: 20px;
+  align-items: center;
 }
 
 .login-panel,
@@ -723,9 +744,12 @@ img {
 }
 
 .login-panel {
-  padding: 32px;
+  padding: 40px 32px;
   display: grid;
-  gap: 18px;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(15, 98, 254, 0.08) 0%, rgba(107, 182, 255, 0.06) 100%);
+  border: 1px solid rgba(15, 98, 254, 0.12);
+  border-radius: 24px;
 }
 
 .login-copy {
@@ -735,27 +759,28 @@ img {
 
 .login-copy h1 {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.1;
+  font-size: 2rem;
+  line-height: 1.2;
   font-weight: 700;
 }
 
 .login-copy p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   color: var(--muted);
+  line-height: 1.5;
 }
 
 .login-form-card {
-  padding: 24px;
+  padding: 28px;
   display: grid;
-  gap: 16px;
+  gap: 14px;
   align-content: start;
 }
 
 .login-form {
   display: grid;
-  gap: 12px;
+  gap: 11px;
 }
 
 .login-form .field {
@@ -763,8 +788,9 @@ img {
 }
 
 .login-form .field span {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 500;
+  color: var(--text);
 }
 
 .password-field {
@@ -813,17 +839,9 @@ img {
   opacity: 0.6;
 }
 
-.login-helper-text {
-  margin: 0;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
 .login-actions {
   justify-content: center;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .login-actions .primary-button {

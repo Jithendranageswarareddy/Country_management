@@ -5,13 +5,14 @@
 
   .sidebar {
     position: fixed;
-    inset: 16px auto 16px 16px;
-    width: min(88vw, 280px);
+    inset: 14px auto 14px 14px;
+    width: min(86vw, 240px);
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     z-index: 50;
-    max-height: calc(100vh - 32px);
-    border-radius: 24px;
+    max-height: calc(100vh - 28px);
+    border-radius: 20px;
+    padding: 14px 12px;
   }
 
   .sidebar.open {
@@ -19,7 +20,7 @@
   }
 
   .main-panel {
-    padding: 18px;
+    padding: 14px;
   }
 
   .stats-grid {
@@ -34,12 +35,17 @@
 
   .login-shell {
     gap: 16px;
+    align-items: start;
   }
 
   .login-panel,
   .login-form-card {
-    padding: 20px;
-    border-radius: 24px;
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+
+  .login-copy h1 {
+    font-size: 1.6rem;
   }
 
   .country-form {
@@ -65,7 +71,7 @@
   }
 
   .topbar {
-    padding: 12px 14px;
+    padding: 10px 14px;
   }
 
   .topbar-actions,
@@ -149,17 +155,24 @@
 
 @media (max-width: 540px) {
   .login-page {
-    padding: 16px;
+    padding: 14px;
   }
 
-  .login-panel,
+  .login-shell {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .login-panel {
+    padding: 24px 20px;
+  }
+
   .login-form-card {
-    padding: 18px;
-    border-radius: 20px;
+    padding: 24px;
   }
 
   .login-copy h1 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .topbar-chip {
