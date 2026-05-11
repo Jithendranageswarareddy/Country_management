@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countries — Country Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div id="topbar-container"></div>
+  <div id="sidebar-container"></div>
+
+  <main class="main-panel" id="content">
+    <section class="panel" id="countries-panel">
+      <div class="panel-header">
+        <h3>Records</h3>
+        <div class="toolbar">
+          <label class="field field-search" for="searchInput">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Search by country, capital, currency, or continent" />
+          </label>
+          <label class="field" for="continentFilter">
+            <span>Filter</span>
+            <select id="continentFilter">
+              <option value="all">All continents</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </label>
+          <div>
+            <button id="toggleView" class="secondary-button">Card View</button>
+            <button id="exportButton" class="secondary-button">Export</button>
+            <button id="importButton" class="secondary-button">Import</button>
+            <input id="importFileInput" type="file" accept=".json" hidden />
+            <a href="country-details.html" id="addLink" class="primary-button">Add Country</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="viewArea">
+        <div class="table-wrap" id="tableView">
+          <table class="country-table">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>Population</th>
+                <th>Currency</th>
+                <th>Continent</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="countryTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="cardView" class="card-grid" hidden></div>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <h4>No countries found</h4>
+          <p>Try a different search term or clear the continent filter.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/countries.js"></script>
+</body>
+</html>

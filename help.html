@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Help — Country Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="topbar-container"></div>
+  <div id="sidebar-container"></div>
+  <main class="main-panel">
+    <section class="panel">
+      <div class="panel-header"><h3>Help & Guide</h3></div>
+      <div class="panel-body">
+        <h4>Adding a Country</h4>
+        <p>Use <strong>Countries</strong> → Add Country to create a new record. Fill all fields and save.</p>
+        <h4>Filtering & Search</h4>
+        <p>Use the search box for quick searches by name, capital, currency or continent. Use the filter to limit by continent.</p>
+        <h4>Import / Export</h4>
+        <p>Use JSON export to download data. Import accepts JSON arrays of country records. Duplicate names are skipped.</p>
+        <h4>Favorites</h4>
+        <p>Use the star/fav button to bookmark countries; view them on the Favorites page.</p>
+      </div>
+    </section>
+  </main>
+  <script src="js/common.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{window.Common.setUpShell();window.Common.requireAuth();});</script>
+</body>
+</html>
