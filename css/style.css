@@ -246,7 +246,7 @@ img {
 .icon-button {
   width: 36px;
   height: 36px;
-  display: grid;
+  display: none;
   place-items: center;
   background: #eaf1ff;
   color: #0b4fd6;

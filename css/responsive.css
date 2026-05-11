@@ -1,4 +1,8 @@
-@media (max-width: 1200px) {
+/* Laptop-First: Keep desktop layout for normal laptop widths */
+/* Only adjust for smaller devices */
+
+/* Tablet & Small Laptop (below 1024px) */
+@media (max-width: 1024px) {
   .app-shell {
     grid-template-columns: 1fr;
   }
@@ -6,7 +10,7 @@
   .sidebar {
     position: fixed;
     inset: 14px auto 14px 14px;
-    width: min(86vw, 240px);
+    width: min(80vw, 220px);
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     z-index: 50;
@@ -28,12 +32,19 @@
   }
 
   .dashboard #dashboard-widgets,
-  .analytics-grid,
-  .login-shell {
+  .analytics-grid {
     grid-template-columns: 1fr;
   }
 
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet (below 900px) */
+@media (max-width: 900px) {
   .login-shell {
+    grid-template-columns: 1fr;
     gap: 16px;
     align-items: start;
   }
@@ -47,22 +58,9 @@
   .login-copy h1 {
     font-size: 1.6rem;
   }
-
-  .country-form {
-    grid-template-columns: 1fr;
-  }
-
-  .country-form .full-width,
-  .country-form .form-error,
-  .country-form .form-actions {
-    grid-column: auto;
-  }
-
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
+/* Mobile & Small Tablet (below 768px) */
 @media (max-width: 768px) {
   .topbar,
   .panel-header {
@@ -147,12 +145,14 @@
   }
 }
 
-@media (min-width: 1201px) {
+/* Desktop: Hide hamburger menu for wider screens */
+@media (min-width: 1025px) {
   .menu-toggle {
     display: none;
   }
 }
 
+/* Small Mobile (below 540px) */
 @media (max-width: 540px) {
   .login-page {
     padding: 14px;
@@ -210,5 +210,19 @@
 
   .loading-card {
     width: calc(100% - 24px);
+  }
+
+  .country-form {
+    grid-template-columns: 1fr;
+  }
+
+  .country-form .full-width,
+  .country-form .form-error,
+  .country-form .form-actions {
+    grid-column: auto;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
   }
 }
