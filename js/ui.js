@@ -139,6 +139,12 @@
     `;
   }
 
-  window.CountryUI = { renderCountries, updateStatistics, populateForm, readForm, buildDetailsMarkup };
-    formatPopulation,
+  window.CountryUI = {
+    renderCountries,
+    updateStatistics,
+    populateForm,
+    readForm,
+    buildDetailsMarkup,
+    formatPopulation
+  };
 })();
