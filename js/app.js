@@ -49,7 +49,7 @@
     els.avgPopulation = document.getElementById("avgPopulation");
     els.sortButtons = document.querySelectorAll(".sort-button");
 
-    if (!els.body) console.debug("Country table body not found (non-critical)");
+    if (!els.body) return;
   }
 
   function visibleCountries() {
@@ -507,7 +507,6 @@
     window.setTimeout(() => {
       if (typeof CountryStorage === "undefined" || !CountryStorage.seedCountries) {
         try { toast('Internal error: data module missing. Reload the page.', 'error'); } catch (e) { /* fallback */ }
-        console.debug("CountryStorage module not loaded");
         hideLoading();
         return;
       }

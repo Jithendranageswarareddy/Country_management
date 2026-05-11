@@ -9,118 +9,53 @@
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" aria-label="Primary navigation">
-      <div class="brand">
-        <div class="brand-mark">CM</div>
-        <h1>Country Hub</h1>
+  <div id="topbar-container"></div>
+  <div id="sidebar-container"></div>
+  <main class="main-panel" id="main-content">
+    <section class="dashboard" id="dashboard-overview">
+      <div class="stats-grid" aria-label="Summary statistics">
+        <article class="stat-card">
+          <span class="stat-label">Total countries</span>
+          <strong id="totalCountries">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Favorites</span>
+          <strong id="favoritesCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Total population</span>
+          <strong id="totalPopulation">0</strong>
+        </article>
+        <article class="stat-card accent-card">
+          <span class="stat-label">Recent activity</span>
+          <strong id="recentActivityCount">0</strong>
+        </article>
       </div>
 
-      <nav class="sidebar-nav">
-        <a class="nav-item active" href="#dashboard">Dashboard</a>
-      </nav>
-    </aside>
-
-    <div class="main-panel">
-      <header class="topbar">
-        <button class="menu-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false">☰</button>
-        <div>
-          <h2>Countries</h2>
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Quick Actions</h3>
+          <div class="toolbar">
+            <a class="secondary-button" href="countries.html">Manage Countries</a>
+            <a class="secondary-button" href="analytics.html">View Analytics</a>
+            <a class="secondary-button" href="favorites.html">Favorites</a>
+          </div>
         </div>
-        <div class="topbar-actions">
-          <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-          <button id="exportButton" class="secondary-button" type="button" title="Export countries as JSON">Export</button>
-          <button id="importButton" class="secondary-button" type="button" title="Import countries from JSON">Import</button>
-          <input type="file" id="importFileInput" accept=".json" hidden />
-          <button id="addCountryButton" class="primary-button" type="button">Add Country</button>
+
+        <div class="panel-body" id="dashboard-widgets">
+          <section class="stat-card" id="top-populated">
+            <h4>Top Populated Countries</h4>
+            <ul id="topPopList"></ul>
+          </section>
+
+          <section class="stat-card" id="recent-searches">
+            <h4>Recent Searches</h4>
+            <ul id="recentSearches"></ul>
+          </section>
         </div>
-      </header>
-
-      <main class="dashboard" id="dashboard">
-        <section class="stats-grid" aria-label="Summary statistics">
-          <article class="stat-card">
-            <span class="stat-label">Total countries</span>
-            <strong id="totalCountries">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Continents</span>
-            <strong id="continentCount">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Total population</span>
-            <strong id="totalPopulation">0</strong>
-          </article>
-          <article class="stat-card accent-card">
-            <span class="stat-label">Visible records</span>
-            <strong id="visibleCountries">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Largest population</span>
-            <span id="largestPopCountry">—</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Smallest population</span>
-            <span id="smallestPopCountry">—</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Most countries</span>
-            <span id="continentMost">—</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Avg population</span>
-            <strong id="avgPopulation">0</strong>
-          </article>
-        </section>
-
-        <section class="panel" id="countries">
-          <div class="panel-header">
-            <div>
-              <h3>Records</h3>
-            </div>
-            <div class="toolbar">
-              <label class="field field-search" for="searchInput">
-                <span>Search</span>
-                <input id="searchInput" type="search" placeholder="Search by country, capital, currency, or continent" />
-              </label>
-              <label class="field" for="continentFilter">
-                <span>Filter</span>
-                <select id="continentFilter">
-                  <option value="all">All continents</option>
-                  <option value="Africa">Africa</option>
-                  <option value="Americas">Americas</option>
-                  <option value="Asia">Asia</option>
-                  <option value="Europe">Europe</option>
-                  <option value="Oceania">Oceania</option>
-                </select>
-              </label>
-            </div>
-          </div>
-
-          <div class="table-wrap">
-            <table class="country-table">
-              <thead>
-                <tr>
-                  <th>Flag</th>
-                  <th class="sortable" data-sort="name"><button class="sort-button" type="button">Country<span class="sort-indicator"></span></button></th>
-                  <th>Capital</th>
-                  <th class="sortable" data-sort="population"><button class="sort-button" type="button">Population<span class="sort-indicator"></span></button></th>
-                  <th>Currency</th>
-                  <th class="sortable" data-sort="continent"><button class="sort-button" type="button">Continent<span class="sort-indicator"></span></button></th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="countryTableBody"></tbody>
-            </table>
-          </div>
-
-          <div id="emptyState" class="empty-state" hidden>
-            <h4>No countries found</h4>
-            <p>Try a different search term or clear the continent filter.</p>
-          </div>
-        </section>
-      </main>
-    </div>
-  </div>
+      </section>
+    </section>
+  </main>
 
   <div id="countryModal" class="modal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
@@ -209,6 +144,7 @@
 
   <script src="js/storage.js"></script>
   <script src="js/ui.js"></script>
-  <script src="js/app.js"></script>
-</body>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+  </body>
 </html>

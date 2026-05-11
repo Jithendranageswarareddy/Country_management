@@ -157,7 +157,7 @@
       a.remove();
       URL.revokeObjectURL(url);
       addActivity('export', 'Exported countries');
-    } catch (e) { console.debug(e); }
+    } catch (e) { /* silent fail on export */ }
   }
 
   function importCountriesFile(file, onComplete) {
