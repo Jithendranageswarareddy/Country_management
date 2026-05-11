@@ -49,7 +49,7 @@
     els.avgPopulation = document.getElementById("avgPopulation");
     els.sortButtons = document.querySelectorAll(".sort-button");
 
-    if (!els.body) console.error("Critical: Country table body not found");
+    if (!els.body) console.debug("Country table body not found (non-critical)");
   }
 
   function visibleCountries() {
@@ -506,7 +506,8 @@
     showLoading();
     window.setTimeout(() => {
       if (typeof CountryStorage === "undefined" || !CountryStorage.seedCountries) {
-        console.error("CountryStorage module not loaded");
+        try { toast('Internal error: data module missing. Reload the page.', 'error'); } catch (e) { /* fallback */ }
+        console.debug("CountryStorage module not loaded");
         hideLoading();
         return;
       }
