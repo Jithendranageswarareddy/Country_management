@@ -51,16 +51,16 @@
     grid.replaceChildren();
     countries.forEach((c) => {
       const card = document.createElement('article');
-      card.className = 'stat-card';
+      card.className = 'stat-card country-card';
       card.innerHTML = `
-        <div style="display:flex;gap:12px;align-items:center;">
-          <div class="flag-wrap" style="width:72px;height:48px"><img class="flag-image" src="${c.flagURL}"/></div>
+        <div class="country-card-head">
+          <div class="flag-wrap country-card-flag"><img class="flag-image" src="${c.flagURL}" alt="${c.countryName} flag"/></div>
           <div>
             <strong>${c.countryName}</strong>
             <div>${c.capital} • ${c.continent}</div>
           </div>
         </div>
-        <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <div class="country-card-actions">
           <a class="secondary-button" href="country-details.html?id=${c.id}">Edit</a>
           <button class="secondary-button" data-action="fav" data-id="${c.id}">${window.Common.favorites.has(c.id) ? 'Unfav' : 'Fav'}</button>
         </div>

@@ -5,11 +5,13 @@
 
   .sidebar {
     position: fixed;
-    inset: 0 auto 0 0;
-    width: 280px;
+    inset: 16px auto 16px 16px;
+    width: min(88vw, 280px);
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     z-index: 50;
+    max-height: calc(100vh - 32px);
+    border-radius: 24px;
   }
 
   .sidebar.open {
@@ -17,11 +19,22 @@
   }
 
   .main-panel {
-    padding: 22px;
+    padding: 18px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard #dashboard-widgets,
+  .analytics-grid,
+  .login-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .login-panel,
+  .login-form-card {
+    padding: 24px;
   }
 
   .country-form {
@@ -46,17 +59,46 @@
     align-items: stretch;
   }
 
+  .topbar {
+    padding: 12px 14px;
+  }
+
   .topbar-actions,
-  .toolbar,
-  .form-actions {
+  .toolbar {
     width: 100%;
+  }
+
+  .topbar-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .toolbar {
     justify-content: stretch;
   }
 
-  .primary-button,
-  .secondary-button,
-  .danger-button {
-    width: 100%;
+  .toolbar > div,
+  .favorite-card-actions,
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .topbar-actions .primary-button,
+  .topbar-actions .secondary-button,
+  .topbar-actions .danger-button,
+  .toolbar .primary-button,
+  .toolbar .secondary-button,
+  .toolbar .danger-button,
+  .favorite-card-actions .primary-button,
+  .favorite-card-actions .secondary-button,
+  .favorite-card-actions .danger-button,
+  .favorites-controls .secondary-button,
+  .settings-actions .primary-button,
+  .settings-actions .secondary-button,
+  .settings-actions .danger-button,
+  .login-actions .primary-button {
+    width: auto;
   }
 
   .toolbar {
@@ -72,10 +114,17 @@
     grid-template-columns: 1fr;
   }
 
+  .form-actions .primary-button,
+  .form-actions .secondary-button,
+  .form-actions .danger-button,
+  .login-actions .primary-button {
+    width: 100%;
+  }
+
   .panel,
   .topbar,
   .modal-dialog {
-    border-radius: 22px;
+    border-radius: 20px;
   }
 
   .main-panel {
@@ -94,6 +143,16 @@
 }
 
 @media (max-width: 540px) {
+  .login-page {
+    padding: 12px;
+  }
+
+  .login-panel,
+  .login-form-card {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
   .topbar-chip {
     width: 100%;
     text-align: center;

@@ -6,19 +6,44 @@
   <title>Login — Country Hub</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <main class="main-panel" style="display:grid;place-items:center;min-height:100vh;padding:24px;">
-    <section class="panel" style="max-width:420px;width:100%;">
-      <h3>Sign in to Country Hub</h3>
-      <p class="form-error" style="margin-top:0;margin-bottom:12px;">Credentials: admin / admin123 or user / user123</p>
-      <form id="loginForm">
-        <label>Username<input id="username" required /></label>
-        <label>Password
-          <div style="display:flex;gap:8px;align-items:center;"><input id="password" type="password" required/><button id="togglePass" type="button">Show</button></div>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-panel">
+      <div class="login-copy">
+        <p class="login-kicker">Country Management</p>
+        <h1>Sign in to Country Hub</h1>
+        <p>Access the dashboard, manage countries, and review analytics from one polished admin workspace.</p>
+      </div>
+
+      <div class="credential-card" aria-label="Demo credentials">
+        <strong>Demo access</strong>
+        <p>admin / admin123</p>
+        <p>user / user123</p>
+      </div>
+    </section>
+
+    <section class="login-form-card panel">
+      <form id="loginForm" class="login-form">
+        <label class="field">
+          <span>Username</span>
+          <input id="username" type="text" autocomplete="username" required />
         </label>
-        <label>Role<select id="role"><option>Admin</option><option>User</option></select></label>
+        <label class="field">
+          <span>Password</span>
+          <div class="password-row">
+            <input id="password" type="password" autocomplete="current-password" required />
+            <button id="togglePass" class="toggle-password" type="button">Show</button>
+          </div>
+        </label>
+        <label class="field">
+          <span>Role</span>
+          <select id="role">
+            <option>Admin</option>
+            <option>User</option>
+          </select>
+        </label>
         <p id="loginError" class="form-error" aria-live="polite"></p>
-        <div class="form-actions">
+        <div class="form-actions login-actions">
           <button class="primary-button" type="submit">Sign in</button>
         </div>
       </form>

@@ -37,7 +37,7 @@
     const found = all.find(c=>c.id===id);
     if (!found) { container.innerHTML = '<p>Country not found. <a href="countries.html">Back</a></p>'; return; }
     // render details with edit option
-    container.innerHTML = window.CountryUI.buildDetailsMarkup(found) + ` <div style="margin-top:12px"><button id="favBtn" class="secondary-button">${window.Common.favorites.has(found.id)?'Unfavorite':'Favorite'}</button> <button id="editBtn" class="secondary-button">Edit</button> <a class="secondary-button" href="countries.html">Back</a></div>`;
+    container.innerHTML = window.CountryUI.buildDetailsMarkup(found) + ` <div class="details-actions"><button id="favBtn" class="secondary-button">${window.Common.favorites.has(found.id)?'Unfavorite':'Favorite'}</button> <button id="editBtn" class="secondary-button">Edit</button> <a class="secondary-button" href="countries.html">Back</a></div>`;
     document.getElementById('favBtn')?.addEventListener('click', ()=>{
       if (window.Common.favorites.has(found.id)) window.Common.favorites.remove(found.id); else window.Common.favorites.add(found.id);
       location.reload();
