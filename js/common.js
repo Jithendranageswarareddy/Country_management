@@ -69,6 +69,21 @@
     document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
     document.getElementById('logoutBtn')?.addEventListener('click', logout);
     document.getElementById('goDashboard')?.addEventListener('click', () => (location.href = 'index.html'));
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (!window.__cmMenuToggleBound) {
+      window.__cmMenuToggleBound = true;
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('.menu-toggle');
+        if (!button) return;
+        const sidebar = document.querySelector('.sidebar');
+        if (!sidebar) return;
+        const open = sidebar.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+    }
     document.querySelectorAll('.nav-item').forEach((a) => {
       if (a.href && a.href.endsWith(location.pathname.split('/').pop())) a.classList.add('active');
     });

@@ -1,22 +1,70 @@
-/* Laptop-First: Keep desktop layout for normal laptop widths */
-/* Only adjust for smaller devices */
+/* Laptop-first responsive CSS */
+/* Desktop/laptop layout is the default; only narrow screens collapse it. */
 
-/* Tablet & Small Laptop (below 1024px) */
+@media (min-width: 1025px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  body:not(.login-page) {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  #topbar-container {
+    grid-column: 1 / -1;
+  }
+
+  #sidebar-container {
+    grid-column: 1;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 16px;
+    width: 240px;
+    max-height: calc(100vh - 32px);
+    transform: none;
+  }
+
+  .main-panel {
+    grid-column: 2;
+    padding: 16px 16px 16px 0;
+  }
+}
+
 @media (max-width: 1024px) {
-  .app-shell {
-    grid-template-columns: 1fr;
+  body:not(.login-page) {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  #topbar-container,
+  #sidebar-container,
+  .main-panel {
+    grid-column: auto;
+  }
+
+  #sidebar-container {
+    position: relative;
   }
 
   .sidebar {
     position: fixed;
-    inset: 14px auto 14px 14px;
+    top: 16px;
+    left: 16px;
     width: min(80vw, 220px);
-    transform: translateX(-100%);
+    max-height: calc(100vh - 32px);
+    transform: translateX(calc(-100% - 16px));
     transition: transform 0.25s ease;
-    z-index: 50;
-    max-height: calc(100vh - 28px);
+    z-index: 100;
+    padding: 16px 14px;
     border-radius: 20px;
-    padding: 14px 12px;
   }
 
   .sidebar.open {
@@ -32,16 +80,19 @@
   }
 
   .dashboard #dashboard-widgets,
-  .analytics-grid {
+  .analytics-grid,
+  .details-grid,
+  .country-form {
     grid-template-columns: 1fr;
   }
 
-  .details-grid {
-    grid-template-columns: 1fr;
+  .country-form .full-width,
+  .country-form .form-error,
+  .country-form .form-actions {
+    grid-column: auto;
   }
 }
 
-/* Tablet (below 900px) */
 @media (max-width: 900px) {
   .login-shell {
     grid-template-columns: 1fr;
@@ -60,7 +111,6 @@
   }
 }
 
-/* Mobile & Small Tablet (below 768px) */
 @media (max-width: 768px) {
   .topbar,
   .panel-header {
@@ -139,20 +189,8 @@
   .main-panel {
     padding: 16px;
   }
-
-  .menu-toggle {
-    display: grid;
-  }
 }
 
-/* Desktop: Hide hamburger menu for wider screens */
-@media (min-width: 1025px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-
-/* Small Mobile (below 540px) */
 @media (max-width: 540px) {
   .login-page {
     padding: 14px;

@@ -52,6 +52,25 @@ body {
   transition: var(--transition);
 }
 
+body:not(.login-page) {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+#topbar-container {
+  grid-column: 1 / -1;
+}
+
+#sidebar-container {
+  grid-column: 1;
+}
+
+.main-panel {
+  grid-column: 2;
+}
+
 button,
 input,
 select {

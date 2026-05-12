@@ -492,12 +492,6 @@
       if (els.confirmModal.classList.contains("open")) closeDelete();
     });
 
-    if (els.menu && els.sidebar) {
-      els.menu.addEventListener("click", () => {
-        const open = els.sidebar.classList.toggle("open");
-        els.menu.setAttribute("aria-expanded", String(open));
-      });
-    }
   }
 
   function init() {
